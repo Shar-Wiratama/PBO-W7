@@ -1,43 +1,53 @@
 package Tugas2;
 
 
-public class Rectangle {
-    private double width, length;
-    public Rectangle(){
-        super();
-        width=1.0;
-        length=1.0;
-    }
-    public Rectangle (double width, double length){
-        super();
-        this.width=width;
-        this.length= length;
-    }
-    public Rectangle(double width, double length, boolean filled, String color){
-        super(color, filled);
-        this.setWidth(width);
-        this.setLength(length);
-    }
-    public double isWidth(){
-        return width;
-    }
-    public void setWidth(double width){
-        this.width=width;
-    }
-    public double isLength(){
-        return length;
-    }
-    public void setLength(double length){
-        this.length=length;
-    }
-    public double getArea(){
-        return length*width;
-    }
-    public double getPerimeter(){
-        return 2*length+2*width;
-    }
-    @Override
-    public String toString(){
-        return "Rectangle["+super.toString()+" length "+length+ " width "+width+"]";
-    }
+public class Rectangle extends Shape {
+	private double width;
+	private double length;	
+        //Constructor rectangle 1
+	public Rectangle() {
+		super();
+		width = 1.0;
+		length = 1.0;
+	}
+        //Constructo rectangle 2
+	public Rectangle(double width,double length) {
+		super();
+		this.width = width;
+		this.length = length;
+	}
+        //Constructor rectangle 3
+	public Rectangle(double width,double length,String color,boolean filled) {
+		super(color,filled);
+		this.width = width;
+		this.length = length;
+	}
+        //return width
+	public double getWidth() {
+		return width;
+	}
+        //set width
+	public void setWidth(double width) {
+		this.width = width;
+	}
+        //return length
+	public double getLength() {
+		return length;
+	}
+        //set length
+	public void setLength(double length) {
+		this.length = length;
+	}	
+        //to return formula of area for rectangle
+	public double getArea() {
+		return width*length;
+	}
+        //to return formula of peripheral for rectangle
+	public double getPerimeter() {
+		return (width+length)*2;
+	}
+        //output for rectangle
+	public String toString() {
+		return "Square[Rectangle[ "+super.toString()+",width= "+width+", length= "+ length+"]";
+	}
 }
